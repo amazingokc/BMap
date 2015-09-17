@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <Button
+        android:text="定位"
+        android:id="@+id/aa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <com.amazing.bmap.Float.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        fab:fab_addButtonColorNormal="@color/pink"
+        fab:fab_addButtonColorPressed="@color/pink_pressed"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginBottom="70dp"
+        fab:fab_labelsPosition="right">
+
+
+
+        <com.amazing.bmap.Float.FloatingActionButton
+
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            fab:fab_title="2222"
+            fab:fab_colorNormal="@color/yellow"
+            fab:fab_colorPressed="@color/yellow_pre"/>
+
+        <com.amazing.bmap.Float.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            fab:fab_colorNormal="@color/yellow"
+            fab:fab_colorPressed="@color/yellow_pre"/>
+
+
+
+    </com.amazing.bmap.Float.FloatingActionsMenu>
+
+
+
+
+
+</RelativeLayout>
