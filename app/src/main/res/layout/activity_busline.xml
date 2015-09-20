@@ -7,35 +7,41 @@
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="在" />
+            android:text="在"
+            android:layout_gravity="center"/>
 
         <EditText
+
             android:id="@+id/city"
-            android:layout_width="wrap_content"
+            android:layout_width="75dip"
             android:layout_height="wrap_content"
-            android:text="北京" />
+            android:hint="city"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="市内找" />
+            android:text="市内找"
+            android:layout_gravity="center"/>
 
         <EditText
             android:id="@+id/searchkey"
-            android:layout_width="wrap_content"
+            android:layout_width="70dip"
             android:layout_height="wrap_content"
-            android:text="717" />
+            android:hint="lines"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="公交车" />
+            android:text="公交车"
+            android:layout_gravity="center"/>
 
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -61,7 +67,7 @@
                 android:layout_marginRight="2dip"
                 android:layout_weight="1"
                 android:onClick="SearchNextBusline"
-                android:text="下一条" />
+                android:text="反向" />
         </LinearLayout>
     </LinearLayout>
 

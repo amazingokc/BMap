@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.baidu.mapapi.map.MapView
+        android:layout_marginBottom="40dp"
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+
+
+    <com.amazing.bmap.Float.FloatingActionButton
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:id="@+id/RadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setMapMode"
+                android:text="普通图" />
+
+            <RadioButton
+                android:id="@+id/statellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setMapMode"
+                android:text="卫星图" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/traffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:onClick="setTraffic"
+            android:text="交通图" />
+
+        <CheckBox
+            android:id="@+id/baiduHeatMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:onClick="setBaiduHeatMap"
+            android:text="百度城市热力图" />
+    </LinearLayout>
+
+    <com.amazing.bmap.Float.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="定位"
+        android:id="@+id/Labutton"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/button1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        fab:fab_colorNormal="@color/yellow"
+        fab:fab_colorPressed="@color/yellow_pre"
+        />
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:id="@+id/poi1"
+        android:background="#ffffff"
+        >
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/text"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="在" >
+        </TextView>
+        <EditText
+            android:textColor="#ff1c0c"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/text"
+            android:id="@+id/city"
+            android:layout_width="75dip"
+            android:layout_height="match_parent"
+            android:hint="城市名"
+            />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/text2"
+            android:textSize="25sp"
+            android:layout_toRightOf="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="市内找" >
+        </TextView>
+        <AutoCompleteTextView
+            android:textColor="#0dbe02"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/text2"
+            android:id="@+id/searchkey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.88"
+            android:hint="餐厅、酒店..." />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp"
+        android:id="@+id/poi2"
+        android:background="#ffffff"
+        >
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:textSize="20sp"
+            android:onClick="searchButtonProcess1"
+
+            android:text="开始" />
+
+        <Button
+            android:layout_width="50dip"
+            android:id="@+id/map_next_data"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:onClick="goToNextPage"
+            android:textSize="20sp"
+            android:text="下一组数据" />
+    </LinearLayout>
+
+    <com.amazing.bmap.Float.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        fab:fab_addButtonColorNormal="@color/pink"
+        fab:fab_addButtonColorPressed="@color/pink_pressed"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginBottom="70dp"
+        fab:fab_labelsPosition="right">
+
+
+
+        <com.amazing.bmap.Float.FloatingActionButton
+
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/yellow"
+            fab:fab_colorPressed="@color/yellow_pre"/>
+
+        <com.amazing.bmap.Float.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/yellow"
+            fab:fab_colorPressed="@color/yellow_pre"/>
+
+    </com.amazing.bmap.Float.FloatingActionsMenu>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="157dp"
+        style="@android:style/Widget.ProgressBar"
+        />
+
+
+
+</RelativeLayout>
